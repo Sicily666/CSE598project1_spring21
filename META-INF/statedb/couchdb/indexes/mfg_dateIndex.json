@@ -1,0 +1,8 @@
+{
+    "index": {
+        "fields": [ "mfg"]
+    },
+    "ddoc": "mfgIndexDoc",
+    "name": "mfgIndex",
+    "type": "json"
+}
