@@ -171,8 +171,14 @@ class Productcontract extends Contract {
         //   TASK-4 Complete teh queryString JSON Object to query using the ProductType Index  defined .(META-INF folder)
         //   Construct the JSON Couch DB selectir queryString that uses ProductType Index
         //   Pass the query string built to queryWithueryString
-
-    return queryResults;
+       let queryString = {
+                "selector": {
+                    "product_type": productType
+                },
+                "use_index": ["productTypeIndexDoc", "ProductTypeIndex"]
+            }
+        let queryResults = await this.queryWithQueryString(ctx,JSON.stringify(queryString));
+        return queryResults;
 
 }
 
