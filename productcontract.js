@@ -173,7 +173,7 @@ class Productcontract extends Contract {
         //   Pass the query string built to queryWithueryString
        let queryString = {
                 "selector": {
-                    "product_type": productType
+                    "productType": productType
                 },
                 "use_index": ["productTypeIndexDoc", "ProductTypeIndex"]
             }
@@ -193,8 +193,14 @@ class Productcontract extends Contract {
          //   TASK-5: Write new index for MfgDate and write a CouchDB selector query that uses it to query by MfgDate
          //    Construct the JSON DB selector that uses MfgDateIndex
          //    Pass the query string built to the queryWithQueryString()
-
-    return queryResults;
+       let queryString = {
+                "selector": {
+                    "mfg": mfg_date
+                },
+                "use_index": ["mfgIndexDoc", "mfgIndex"]
+            }
+       let queryResults = await this.queryWithQueryString(ctx,JSON.stringify(queryString));
+       return queryResults;
 
 }
 
