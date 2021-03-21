@@ -107,7 +107,7 @@ class Productcontract extends Contract {
         //Use set_quantity from ProductRecord to update the quantity field
         //Use updatePRecord from productList to update the record on the ledger
         let precord = await ctx.ProductList.getPRecord(precordKey);
-        await precord.setlastCheckupDate( last_checkup_date );
+        await precord.setQuantity( quantity );
         await ctx.ProductList.updatePRecord(precord);
         return precord.toBuffer();
     }
