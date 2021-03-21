@@ -89,7 +89,7 @@ class Productcontract extends Contract {
         //TASK-1: Use a method from productRecord to read a record by key
         // get product record by calling the method of ProductList class
         let precord =  await ctx.ProductList.getPRecord(precordKey);
-        await ctx.ProductList.addPRecord(precord);
+        await ctx.Productlist.addPRecord(precord);
         return JSON.stringify(precord)
     }
 
