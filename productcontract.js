@@ -49,10 +49,11 @@ class Productcontract extends Contract {
     //  a function is called that does not exist in the contract.
     //  The error message should be: 'Function name missing'.
     //  Read more about unknownTransaction here: https://hyperledger.github.io/fabric-chaincode-node/master/api/fabric-contract-api.Contract.html
+    
 
     async unknownTransaction(ctx){
         //GRADED FUNCTION
-        throw new Error()
+        throw new Error("Function name missing");
     }
 
 
@@ -216,8 +217,17 @@ class Productcontract extends Contract {
         //  and uses the index created for prodcutType
         //  Construct the JSON couch DB selector that uses two product types
         //  Pass the query string to queryWithQueryString
-    return queryResults;
-
+       let queryString = {
+                    "selector": {
+                            "productType":{
+                              "$in": [productType1 ,productType2]
+                            }
+                            },
+                     "use_index": ["productTypeIndexDoc", "ProductTypeIndex"]
+                }
+       let queryResults = await this.queryWithQueryString(ctx,JSON.stringify(queryString));
+       return queryResults;
+    
 }
 
 }
