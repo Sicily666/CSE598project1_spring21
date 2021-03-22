@@ -107,9 +107,9 @@ class Productcontract extends Contract {
         //TASK-3: Use a method from productList to read a record by key
         //Use set_quantity from ProductRecord to update the quantity field
         //Use updatePRecord from productList to update the record on the ledger
-        let precord = await ctx.ProductList.getPRecord(precordKey);
+        let precord = await ctx.productList.getPRecord(precordKey);
         await precord.setQuantity( quantity );
-        await ctx.ProductList.updatePRecord(precord);
+        await ctx.productList.updatePRecord(precord);
         return precord.toBuffer();
     }
 
