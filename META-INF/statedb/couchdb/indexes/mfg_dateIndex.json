@@ -1,8 +1,8 @@
 {
     "index": {
-        "fields": [ "mfg"]
+        "fields": [ "mfg_date"]
     },
-    "ddoc": "mfgIndexDoc",
-    "name": "mfgIndex",
+    "ddoc": "mfg_dateIndexDoc",
+    "name": "mfg_dateIndex",
     "type": "json"
 }
