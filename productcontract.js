@@ -198,7 +198,7 @@ class Productcontract extends Contract {
                 "selector": {
                     "mfg": mfg_date
                 },
-                "use_index": ["mfgIndexDoc", "mfgIndex"]
+                "use_index": ["mfg_dateIndexDoc", "mfg_dateIndex"]
             }
        let queryResults = await this.queryWithQueryString(ctx,JSON.stringify(queryString));
        return queryResults;
